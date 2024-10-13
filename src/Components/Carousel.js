@@ -3,14 +3,12 @@ import React, { useState, useEffect } from 'react';
 // Importa las imágenes de esta manera si están en la carpeta src
 import fndImage from '../Components/Image/fnd.jpg';
 import dulceDeLeche from '../Components/Image/dulce-de-leche.jpg';
-
-// O usa estas rutas si las imágenes están en la carpeta public
-// const fndImage = '/img/fnd.png';
-// const dulceDeLeche = '/img/dulce-de-leche.png';
+import almibar from '../Components/Image/Alfajores.jpg';
 
 const images = [
   { src: fndImage, /* alt: 'FND' */ },
   { src: dulceDeLeche, /* alt: 'Dulce de Leche' */ },
+  { src: almibar, /* alt: 'almibar' */ },
 ];
 
 const Carousel = () => {
