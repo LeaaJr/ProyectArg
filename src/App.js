@@ -1,18 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import './App.css';
+import Home from './Components/Home';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
+      <div className="flex flex-col min-h-screen">
         <Navbar />
-        {/* Aquí irá el resto de tu contenido */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* Añade aquí más rutas según sea necesario */}
+        </Routes>
       </div>
     </Router>
   );
 }
 
 export default App;
-
