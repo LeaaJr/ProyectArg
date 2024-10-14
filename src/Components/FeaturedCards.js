@@ -10,7 +10,7 @@ const cards = [
   { title: 'Categoría 6', image: 'url_imagen_categoria_6', link: '/productos/categoria6' },
 ];
 
-const FeaturedCards = () => {
+  const FeaturedCards = () => {
   const [startIndex, setStartIndex] = useState(0);
 
   const nextCards = () => {
@@ -22,9 +22,9 @@ const FeaturedCards = () => {
   };
 
   return (
-    <div className="container mx-auto py-16 px-4">
-      <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Productos Destacados</h2>
-      <div className="relative">
+      <div className="container mx-auto py-48 px-4"> {/* Cambiado de py-16 a py-48 */}
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Productos</h2>
+        <div className="relative">
         <div className="flex justify-between items-center">
           <button
             onClick={prevCards}

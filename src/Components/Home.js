@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from './Carousel';
 import FeaturedCards from './FeaturedCards';
+import FeatureCircles from './FeatureCircles';
 import Footer from './Footer';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
       <main className="flex-grow">
         <Carousel />
         <FeaturedCards />
+        <FeatureCircles />
       </main>
       <Footer />
     </div>
