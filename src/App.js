@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './Components/Navbar';
 import Home from './Components/Home';
+import Productos from './Components/Productos';
+import Navbar from './Components/Navbar';
+// Asegúrate de que la ruta de importación sea correcta
 
 function App() {
   return (
@@ -10,7 +12,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Añade aquí más rutas según sea necesario */}
+          <Route path="/productos/:categoria" element={<Productos />} />
         </Routes>
       </div>
     </Router>

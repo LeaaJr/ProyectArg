@@ -1,18 +1,16 @@
 import React from 'react';
-import Carousel from './Carousel';
-import FeaturedCards from './FeaturedCards';
-import FeatureCircles from './FeatureCircles';
-import Footer from './Footer';
+import Carousel from '../Components/Carousel';
+import FeaturedCards from '../Components/FeaturedCards';
+import FeatureCircles from '../Components/FeatureCircles';
+import DiagonalCards from '../Components/DiagonalCards';
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-grow">
-        <Carousel />
-        <FeaturedCards />
-        <FeatureCircles />
-      </main>
-      <Footer />
+    <div>
+      <Carousel />
+      <FeaturedCards />
+      <FeatureCircles />
+      <DiagonalCards />
     </div>
   );
 };

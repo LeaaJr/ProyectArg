@@ -23,7 +23,7 @@ const cards = [
 
   return (
       <div className="container mx-auto py-48 px-4"> {/* Cambiado de py-16 a py-48 */}
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Productos</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Productos Destacados</h2>
         <div className="relative">
         <div className="flex justify-between items-center">
           <button
