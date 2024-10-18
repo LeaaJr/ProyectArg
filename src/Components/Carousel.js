@@ -1,56 +1,69 @@
 import React, { useState, useEffect } from 'react';
+// Importa tus imágenes aquí
+import image1 from '../Components/Image/dulce-de-leche.jpg';
+import image2 from '../Components/Image/Alfajores.jpg';
+import image3 from '../Components/Image/fnd.jpg';
 
-// Importa las imágenes de esta manera si están en la carpeta src
-import fndImage from '../Components/Image/fnd.jpg';
-import dulceDeLeche from '../Components/Image/dulce-de-leche.jpg';
-import almibar from '../Components/Image/Alfajores.jpg';
-
-const images = [
-  { src: fndImage, /* alt: 'FND' */ },
-  { src: dulceDeLeche, /* alt: 'Dulce de Leche' */ },
-  { src: almibar, /* alt: 'almibar' */ },
-];
+const images = [image1, image2, image3];
 
 const Carousel = () => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [titlePosition, setTitlePosition] = useState(300); // Aumentado para asegurar que esté fuera de la vista
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 5000); // Cambiado a 5 segundos para dar más tiempo para ver cada imagen
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
 
-    return () => clearInterval(interval);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 0) {
+        setTitlePosition(0); // Mover inmediatamente al centro con el primer scroll
+      } else {
+        setTitlePosition(300); // Mantener fuera de la pantalla si no hay scroll
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       {images.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ${
-            index === currentImage ? 'opacity-100' : 'opacity-0'
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <img 
-            src={image.src} 
-            alt={image.alt} 
-            className="w-full h-full object-cover object-center"
+          <img
+            src={image}
+            alt={`Slide ${index + 1}`}
+            className="w-full h-full object-cover"
           />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-            <p className="text-white text-xl font-bold">{image.alt}</p>
-          </div>
         </div>
       ))}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className={`w-3 h-3 rounded-full ${
-              index === currentImage ? 'bg-white' : 'bg-gray-400'
-            }`}
-            onClick={() => setCurrentImage(index)}
-          />
-        ))}
+      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden">
+        <h1 className="text-4xl md:text-6xl font-bold text-white text-center px-4 whitespace-nowrap">
+          <span 
+            className="inline-block transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${titlePosition}%)` }}
+          >
+            Pasiones Argentinas
+          </span>
+          {' '}
+          <span 
+            className="inline-block transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(${titlePosition}%)` }}
+          >
+            en Italia
+          </span>
+        </h1>
       </div>
     </div>
   );
