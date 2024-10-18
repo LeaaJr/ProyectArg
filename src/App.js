@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
+import WhatsAppButton from './Components/WhatsAppButton';
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </Router>
   );
 }
 
-export default App;  // Asegúrate de que esta línea esté presente
+export default App;
