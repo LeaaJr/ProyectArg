@@ -1,39 +1,45 @@
 import React, { useState } from 'react';
-import ProductCard from './ProductCard';
+import { FaPlus, FaMinus, FaShoppingCart } from 'react-icons/fa';
 
-const products = [
-  { id: 1, name: 'Yerba Mate', price: 10.99, image: 'path/to/yerba-image.jpg' },
-  { id: 2, name: 'Alfajores', price: 5.99, image: 'path/to/alfajores-image.jpg' },
-  { id: 3, name: 'Dulce de Leche', price: 7.99, image: 'path/to/dulce-de-leche-image.jpg' },
-  { id: 4, name: 'Mate', price: 15.99, image: 'path/to/mate-image.jpg' },
-  // Añade más productos aquí
-];
+const ProductCard = ({ product }) => {
+  const [quantity, setQuantity] = useState(1);
 
-const ProductList = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const increaseQuantity = () => setQuantity(prev => prev + 1);
+  const decreaseQuantity = () => setQuantity(prev => (prev > 1 ? prev - 1 : 1));
 
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const addToCart = () => {
+    alert(`${quantity} ${product.name}(s) añadido(s) a tu carrito`);
+    setQuantity(1);
+  };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-end mb-6">
-        <input
-          type="text"
-          placeholder="Buscar productos..."
-          className="w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+      <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
+      <div className="p-4 flex flex-col justify-between flex-grow">
+        <div>
+          <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+          <p className="text-gray-600 text-lg mb-4">${product.price.toFixed(2)}</p>
+        </div>
+        <div className="flex flex-col space-y-3">
+          <div className="flex items-center justify-center">
+            <button onClick={decreaseQuantity} className="bg-gray-200 px-3 py-1 rounded-l">
+              <FaMinus />
+            </button>
+            <span className="bg-gray-100 px-4 py-1 text-lg">{quantity}</span>
+            <button onClick={increaseQuantity} className="bg-gray-200 px-3 py-1 rounded-r">
+              <FaPlus />
+            </button>
+          </div>
+          <button 
+            onClick={addToCart} 
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center"
+          >
+            <FaShoppingCart className="mr-2" /> Añadir al carrito
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default ProductList;
+export default ProductCard;
