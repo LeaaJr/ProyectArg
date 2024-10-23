@@ -1,6 +1,8 @@
 import './Style/Navbar.css';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +16,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = ['Inicio', 'Productos', { name: 'Carrito', icon: faShoppingCart }];
+
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
       <div className="navbar-content">
@@ -21,13 +25,13 @@ const Navbar = () => {
           TuTienda
         </Link>
         <div className="navbar-links">
-          {['Inicio', 'Productos', 'Carrito'].map((item) => (
+          {navItems.map((item) => (
             <Link
-              key={item}
-              to={item === 'Inicio' ? '/' : `/${item.toLowerCase()}`}
+              key={typeof item === 'string' ? item : item.name}
+              to={typeof item === 'string' ? (item === 'Inicio' ? '/' : `/${item.toLowerCase()}`) : '/carrito'}
               className="navbar-link"
             >
-              {item}
+              {typeof item === 'string' ? item : <FontAwesomeIcon icon={item.icon} />}
             </Link>
           ))}
         </div>
@@ -40,14 +44,14 @@ const Navbar = () => {
         </button>
       </div>
       <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
-        {['Inicio', 'Productos', 'Carrito'].map((item) => (
+        {navItems.map((item) => (
           <Link
-            key={item}
-            to={item === 'Inicio' ? '/' : `/${item.toLowerCase()}`}
+            key={typeof item === 'string' ? item : item.name}
+            to={typeof item === 'string' ? (item === 'Inicio' ? '/' : `/${item.toLowerCase()}`) : '/carrito'}
             className="navbar-link"
             onClick={() => setIsOpen(false)}
           >
-            {item}
+            {typeof item === 'string' ? item : <FontAwesomeIcon icon={item.icon} />}
           </Link>
         ))}
       </div>

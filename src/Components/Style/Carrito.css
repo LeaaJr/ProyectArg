@@ -1,0 +1,119 @@
+.carrito-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.carrito-lista {
+  list-style-type: none;
+  padding: 0;
+}
+
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.carrito-item:hover {
+  background-color: #f9f9f9;
+}
+
+.carrito-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.carrito-item-info {
+  flex-grow: 1;
+}
+
+.carrito-item-name {
+  font-weight: bold;
+}
+
+.carrito-item-price {
+  color: #888;
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.remove-btn:hover {
+  transform: scale(1.2);
+  color: #ff0000;
+}
+
+.carrito-total {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.carrito-acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.seguir-comprando-btn, .realizar-pago-btn, .submit-payment-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.seguir-comprando-btn {
+  background-color: #f0f0f0;
+}
+
+.seguir-comprando-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.realizar-pago-btn, .submit-payment-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.realizar-pago-btn:hover, .submit-payment-btn:hover {
+  background-color: #45a049;
+}
+
+.payment-form {
+  margin-top: 30px;
+}
+
+.payment-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.payment-form input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
