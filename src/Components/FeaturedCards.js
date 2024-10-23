@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const cards = [
@@ -10,8 +10,16 @@ const cards = [
   { title: 'Categoría 6', image: 'url_imagen_categoria_6', link: '/productos/categoria6' },
 ];
 
-  const FeaturedCards = () => {
+const FeaturedCards = () => {
   const [startIndex, setStartIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStartIndex((prevIndex) => (prevIndex + 1) % cards.length);
+    }, 3000); // Cambia de tarjeta cada 3 segundos
+
+    return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
+  }, []);
 
   const nextCards = () => {
     setStartIndex((prevIndex) => (prevIndex + 1) % cards.length);
@@ -22,9 +30,9 @@ const cards = [
   };
 
   return (
-      <div className="container mx-auto py-48 px-4"> {/* Cambiado de py-16 a py-48 */}
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Productos Destacados</h2>
-        <div className="relative">
+    <div className="container mx-auto py-48 px-4">
+      <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Productos Destacados</h2>
+      <div className="relative">
         <div className="flex justify-between items-center">
           <button
             onClick={prevCards}
