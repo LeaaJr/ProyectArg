@@ -1,0 +1,11 @@
+.container {
+    overflow: hidden; /* Asegúrate de que el contenedor oculte el desbordamiento */
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .transition-transform {
+    transition: transform 0.3s ease-in-out; /* Asegúrate de que la transición sea suave */
+  }
