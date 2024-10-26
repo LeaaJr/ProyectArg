@@ -1,5 +1,16 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'], // Asegúrate de que las rutas sean correctas
+  darkMode: false, // o 'media' o 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+
   theme: {
     extend: {
       transform: ['hover', 'focus'],

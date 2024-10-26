@@ -1,12 +1,13 @@
 import './Style/Navbar.css';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Importa useLocation
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation(); // Obtiene la ubicación actual
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +30,7 @@ const Navbar = () => {
             <Link
               key={typeof item === 'string' ? item : item.name}
               to={typeof item === 'string' ? (item === 'Inicio' ? '/' : `/${item.toLowerCase()}`) : '/carrito'}
-              className="navbar-link"
+              className={`navbar-link ${location.pathname === '/carrito' && item.name === 'Carrito' ? 'text-black' : 'text-white'}`} // Cambia el color del texto
             >
               {typeof item === 'string' ? item : <FontAwesomeIcon icon={item.icon} />}
             </Link>
@@ -48,7 +49,7 @@ const Navbar = () => {
           <Link
             key={typeof item === 'string' ? item : item.name}
             to={typeof item === 'string' ? (item === 'Inicio' ? '/' : `/${item.toLowerCase()}`) : '/carrito'}
-            className="navbar-link"
+            className={`navbar-link ${location.pathname === '/carrito' && item.name === 'Carrito' ? 'text-black' : 'text-white'}`} // Cambia el color del texto
             onClick={() => setIsOpen(false)}
           >
             {typeof item === 'string' ? item : <FontAwesomeIcon icon={item.icon} />}
