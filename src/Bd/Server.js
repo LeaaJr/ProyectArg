@@ -4,8 +4,6 @@ const express = require('express');
 const sequelize = require('../Db');
 const productosRoutes = require('../Routes/Productos.routes');
 
-// ... resto del código
-
 const app = express();
 
 app.use(express.json());
