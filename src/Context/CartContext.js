@@ -7,21 +7,26 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
-      if (existingItem) {
-        return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      const existingProduct = prevCart.find(item => item.id === product.id);
+      if (existingProduct) {
+        // Si el producto ya existe en el carrito, actualiza la cantidad
+        return prevCart.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + product.quantity }
+            : item
         );
+      } else {
+        // Si el producto no existe, agrégalo al carrito
+        return [...prevCart, product];
       }
-      return [...prevCart, { ...product, quantity: 1 }];
     });
   };
 
-  const removeFromCart = (productId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  const removeFromCart = (id) => {
+    setCart(prevCart => prevCart.filter(item => item.id !== id));
   };
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <CartContext.Provider value={{ cart, addToCart, removeFromCart, total }}>

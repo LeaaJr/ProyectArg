@@ -1,5 +1,5 @@
-const sequelize = require('./config/database');
-const Producto = require('./models/Producto');
+const sequelize = require('./Db');
+const Producto = require('./Models/Producto.model');
 
 const syncDatabase = async () => {
   try {
