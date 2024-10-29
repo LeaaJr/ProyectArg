@@ -1,0 +1,15 @@
+/* Styles/StylesImg.css */
+
+.product-image {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 200px; /* Establece una altura fija para la imagen */
+    object-fit: contain; /* Cubre el área del contenedor sin distorsionar la imagen */
+    border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+.product-card {
+    min-height: 350px; /* Altura mínima para las tarjetas de producto */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
+}

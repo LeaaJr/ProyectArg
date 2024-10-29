@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import yerbacard from './/Image/yermatcard.jpg';
+import yerbacard from './Image/yermatcard.jpg';
 import dulcescard from './Image/dulcecard.jpg';
 import almacencard from './Image/productscard.jpg'; 
 

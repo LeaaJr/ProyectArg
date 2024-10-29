@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const CarritoPage = () => {
-  const { cart, removeFromCart, total } = useCart();
+  const { cart, removeFromCart, total, addToCart } = useCart(); // Asegúrate de que addToCart esté aquí
   const [isCheckout, setIsCheckout] = useState(false);
   const [formData, setFormData] = useState({
     nombre: '',
@@ -26,9 +26,14 @@ const CarritoPage = () => {
   };
 
   const handleCheckout = () => {
-    // Aquí puedes agregar la lógica para validar los datos
     console.log('Datos de compra:', formData);
-    // Aquí puedes agregar la lógica para procesar el pago
+  };
+
+  const handleQuantityChange = (item, change) => {
+    const newQuantity = item.quantity + change;
+    if (newQuantity > 0) {
+      addToCart({ ...item, quantity: newQuantity }); // Asegúrate de que addToCart esté definido
+    }
   };
 
   return (
@@ -50,9 +55,23 @@ const CarritoPage = () => {
                       <p>Precio: ${item.price * item.quantity}</p>
                     </div>
                   </div>
-                  <button onClick={() => removeFromCart(item.id)} className="remove-btn">
-                    <FontAwesomeIcon icon={faTrash} />
-                  </button>
+                  <div className="flex items-center">
+                    <button
+                      onClick={() => handleQuantityChange(item, -1)}
+                      className="bg-gray-300 text-gray-800 py-1 px-2 rounded"
+                    >
+                      -
+                    </button>
+                    <button
+                      onClick={() => handleQuantityChange(item, 1)}
+                      className="bg-gray-300 text-gray-800 py-1 px-2 rounded ml-2"
+                    >
+                      +
+                    </button>
+                    <button onClick={() => removeFromCart(item.id)} className="remove-btn ml-2 text-red-500 hover:text-red-700 transition duration-200">
+                      <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                  </div>
                 </li>
               ))}
             </ul>

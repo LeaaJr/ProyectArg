@@ -1,13 +1,51 @@
 import React, { useState } from 'react';
 import ProductCard from './ProductCard';
+import Can1kg from './ImgProduct/005697.jpg'
+import Can500g from './ImgProduct/can500g.jpg'
 
 const products = [
-  { id: 1, name: 'Yerba Mate', price: 10.99, image: '/images/yerba-mate.jpg' },
-  { id: 2, name: 'Alfajores', price: 5.99, image: '/images/alfajores.jpg' },
-  { id: 3, name: 'Dulce de Leche', price: 7.99, image: '/images/dulce-de-leche.jpg' },
-  { id: 4, name: 'asd', price: 15.99, image: '/images/mate.jpg' },
-  { id: 5, name: 'fgh', price: 15.99, image: '/images/mate.jpg' },
-  { id: 6, name: 'ijk', price: 15.99, image: '/images/mate.jpg' },
+  { 
+    id: 1, 
+    name: 'Yerba Canarias 1kg', 
+    price: 10.99, 
+    image: Can1kg,
+    description: 'Clasica' // Descripción del producto
+  },
+  { 
+    id: 2, 
+    name: 'Yerba Canarias 500gr', 
+    price: 5.99, 
+    image: Can500g,
+    description: 'Clasica' // Descripción del producto
+  },
+  { 
+    id: 3, 
+    name: 'Dulce de Leche', 
+    price: 7.99, 
+    image: '/images/dulce-de-leche.jpg',
+    description: 'Un dulce de leche cremoso y delicioso, ideal para untar.' // Descripción del producto
+  },
+  { 
+    id: 4, 
+    name: 'Mate', 
+    price: 15.99, 
+    image: '/images/mate.jpg',
+    description: 'Un elegante mate de cerámica para disfrutar de tu bebida favorita.' // Descripción del producto
+  },
+  { 
+    id: 5, 
+    name: 'Mate', 
+    price: 15.99, 
+    image: '/images/mate.jpg',
+    description: 'Un elegante mate de cerámica para disfrutar de tu bebida favorita.' // Descripción del producto
+  },
+  { 
+    id: 6, 
+    name: 'Mate', 
+    price: 15.99, 
+    image: '/images/mate.jpg',
+    description: 'Un elegante mate de cerámica para disfrutar de tu bebida favorita.' // Descripción del producto
+  },
   // Añade más productos aquí
 ];
 
