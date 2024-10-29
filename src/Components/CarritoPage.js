@@ -136,6 +136,8 @@ const CarritoPage = () => {
                   className="border p-2 rounded mb-2 w-full"
                   value={formData.tarjetaNumero}
                   onChange={handleInputChange}
+                  maxLength="16" // Limitar a 16 caracteres
+                  pattern="\d*" // Solo permite números
                 />
                 <input
                   type="text"
@@ -144,6 +146,8 @@ const CarritoPage = () => {
                   className="border p-2 rounded mb-2 w-full"
                   value={formData.tarjetaExp}
                   onChange={handleInputChange}
+                  maxLength="5" // Limitar a 5 caracteres (MM/AA)
+                  pattern="(0[1-9]|1[0-2])\/[0-9]{2}" // Validar formato MM/AA
                 />
                 <input
                   type="text"
@@ -152,6 +156,8 @@ const CarritoPage = () => {
                   className="border p-2 rounded mb-2 w-full"
                   value={formData.tarjetaCVV}
                   onChange={handleInputChange}
+                  maxLength="3" // Limitar a 3 caracteres
+                  pattern="\d*" // Solo permite números
                 />
                 <button
                   onClick={handleCheckout}
