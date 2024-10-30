@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProductCard from './ProductCard';
-import ImgProd from './ImgProduct/ImgProd';
+import ImgProd from './ImgProd';
 
 const ProductList = ({ onShowAlert }) => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -40,24 +40,40 @@ const products = [
     id: 4, 
     name: 'Yerba Playadito 500gr', 
     price: 15.99, 
-    image: '/images/mate.jpg',
-    description: 'Un elegante mate de cerámica para disfrutar de tu bebida favorita.',
+    image: ImgProd.Pla5g1,
+    image2: ImgProd.Pla5g2,
+    image3: ImgProd.Pla5g3,
+    description: 'Playadito está elaborada con palo y libre de gluten, se caracteriza por su delicioso sabor suave. Recomendado para quienes toman mate con frecuencia y prefieren sabores suaves y duraderos',
     stock: 10 // Cantidad disponible en stock
   },
   { 
     id: 5, 
     name: 'Yerba Playadito 1kg', 
     price: 15.99, 
-    image: '/images/mate.jpg',
-    description: 'Un elegante mate de cerámica para disfrutar de tu bebida favorita.',
+    image: ImgProd.Pla1kg1,
+    image2: ImgProd.Pla1kg2,
+    image3: ImgProd.Pla1kg1,
+    description: 'Playadito está elaborada con palo y libre de gluten, se caracteriza por su delicioso sabor suave. Recomendado para quienes toman mate con frecuencia y prefieren sabores suaves y duraderos',
     stock: 10 // Cantidad disponible en stock
   },
   { 
     id: 6, 
-    name: 'Yerba', 
+    name: 'Yerba Playadito Edición Especial 500gr', 
     price: 15.99, 
-    image: '/images/mate.jpg',
-    description: 'Un elegante mate de cerámica para disfrutar de tu bebida favorita.',
+    image:  ImgProd.Plaed1,
+    image2: ImgProd.Plaed2,
+    image3: ImgProd.Plaed3,
+    description: 'Playadito está elaborada con palo y libre de gluten, se caracteriza por su delicioso sabor suave. Recomendado para quienes toman mate con frecuencia y prefieren sabores suaves y duraderos',
+    stock: 10 // Cantidad disponible en stock
+  },
+  { 
+    id: 7, 
+    name: 'Yerba Baldo 1kg', 
+    price: 15.99, 
+    image:  ImgProd.Balkg1,
+    image2: ImgProd.Balkg2,
+    image3: ImgProd.Balkg3,
+    description: 'Playadito está elaborada con palo y libre de gluten, se caracteriza por su delicioso sabor suave. Recomendado para quienes toman mate con frecuencia y prefieren sabores suaves y duraderos',
     stock: 10 // Cantidad disponible en stock
   },
   // Añade más productos aquí
