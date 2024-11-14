@@ -18,7 +18,11 @@ import Plaed3 from './ImgProduct/plaedes3.jpg'
 import Balkg1 from './ImgProduct/bal1kg1.jpg'
 import Balkg2 from './ImgProduct/bal1kg2.jpg'
 import Balkg3 from './ImgProduct/bal1kg3.jpg'
-
+import DdlHav1 from './ImgProduct/ddlhav1.jpg'
+import DdlHav2 from './ImgProduct/ddlhav2.jpg'
+import DdlHav3 from './ImgProduct/ddlhav3.jpg'
+import AddlBlan1 from './ImgProduct/AlfDdlBlan1.jpg'
+import AddlBlan2 from './ImgProduct/AlfDdlBlan2.jpg'
 
 
 // Importa todas las demás imágenes aquí
@@ -44,8 +48,12 @@ const ImgProd = {
   Balkg1,
   Balkg2,
   Balkg3,
+  DdlHav1,
+  DdlHav2,
+  DdlHav3,
+  AddlBlan1,
+  AddlBlan2,
   
-  // Agrega más imágenes aquí
 };
 
 export default ImgProd;

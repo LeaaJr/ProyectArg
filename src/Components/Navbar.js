@@ -30,7 +30,7 @@ const Navbar = () => {
             <Link
               key={typeof item === 'string' ? item : item.name}
               to={typeof item === 'string' ? (item === 'Inicio' ? '/' : `/${item.toLowerCase()}`) : '/carrito'}
-              className={`navbar-link ${location.pathname === '/carrito' && item.name === 'Carrito' ? 'text-black' : 'text-white'}`} // Cambia el color del texto
+              className={`navbar-link ${location.pathname === '/carrito' && item.name === 'Carrito' ? 'text-black' : 'text-white'}`}
             >
               {typeof item === 'string' ? item : <FontAwesomeIcon icon={item.icon} />}
             </Link>
@@ -49,7 +49,7 @@ const Navbar = () => {
           <Link
             key={typeof item === 'string' ? item : item.name}
             to={typeof item === 'string' ? (item === 'Inicio' ? '/' : `/${item.toLowerCase()}`) : '/carrito'}
-            className={`navbar-link ${location.pathname === '/carrito' && item.name === 'Carrito' ? 'text-black' : 'text-white'}`} // Cambia el color del texto
+            className={`navbar-link ${location.pathname === '/carrito' && item.name === 'Carrito' ? 'text-black' : 'text-white'}`}
             onClick={() => setIsOpen(false)}
           >
             {typeof item === 'string' ? item : <FontAwesomeIcon icon={item.icon} />}

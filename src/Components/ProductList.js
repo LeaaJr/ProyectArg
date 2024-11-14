@@ -76,7 +76,27 @@ const products = [
     description: 'Playadito está elaborada con palo y libre de gluten, se caracteriza por su delicioso sabor suave. Recomendado para quienes toman mate con frecuencia y prefieren sabores suaves y duraderos',
     stock: 10 // Cantidad disponible en stock
   },
-  // Añade más productos aquí
+  { 
+    id: 8, 
+    name: 'Dulce de Leche Havanna', 
+    price: 7.00, 
+    image:  ImgProd.DdlHav1,
+    image2: ImgProd.DdlHav2,
+    image3: ImgProd.DdlHav3,
+    description: 'Un dulce con múltiples usos, desde el desayuno, untandolo en pan o tostadas, colaciones, acompañando alguna fruta, hasta para la realización de diversos postres. Sin gluten',
+    stock: 10 // Cantidad disponible en stock
+  },
+  { 
+    id: 9, 
+    name: 'Alfajor Dulce de Leche Blanco', 
+    price: 0.70,
+    image:  ImgProd.AddlBlan1,
+    image2: ImgProd.AddlBlan2,
+    image3: ImgProd.AddlBlan1,
+    description: 'Alfajor compuesto por dos galletas con cacao unidas por dulce de leche y bañadas con una capa de cobertura blanca',
+    stock: 10 // Cantidad disponible en stock
+  },
+
 ];
 
 const filteredProducts = products.filter(product =>
@@ -85,7 +105,7 @@ const filteredProducts = products.filter(product =>
 
 return (
   <div className="container mx-auto px-4 py-8">
-    <div className="flex justify-end mb-6 pt-16"> {/* Agrega padding superior aquí */}
+    <div className="flex justify-end mb-6 pt-16">
       <input
         type="text"
         placeholder="Buscar productos..."
