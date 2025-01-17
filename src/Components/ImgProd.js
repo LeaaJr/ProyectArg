@@ -23,6 +23,10 @@ import DdlHav2 from './ImgProduct/ddlhav2.jpg'
 import DdlHav3 from './ImgProduct/ddlhav3.jpg'
 import AddlBlan1 from './ImgProduct/AlfDdlBlan1.jpg'
 import AddlBlan2 from './ImgProduct/AlfDdlBlan2.jpg'
+import alfhavnFront from  './ImgProduct/alfhavnfront.jpg'
+import alfhavnBack from  './ImgProduct/alfhavnback.jpg'
+import DonSaturNeg from './ImgProduct/DonSaturNeg.jpg'
+import BanArgIta from './ImgProduct/BannerArgIt.jpg'
 
 
 // Importa todas las demás imágenes aquí
@@ -53,6 +57,10 @@ const ImgProd = {
   DdlHav3,
   AddlBlan1,
   AddlBlan2,
+  alfhavnFront,
+  alfhavnBack,
+  DonSaturNeg,
+  BanArgIta
   
 };
 

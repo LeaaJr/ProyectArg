@@ -17,7 +17,8 @@ const products = [
     stock: 3 // Cantidad disponible en stock
   },
   { 
-    id: 2, 
+    id: 2,
+    link: `/productos/${2}` ,// Usando el ID del producto
     name: 'Yerba Canarias 500gr', 
     price: 5.99, 
     image: ImgProd.Can500g,
@@ -93,6 +94,16 @@ const products = [
     image:  ImgProd.AddlBlan1,
     image2: ImgProd.AddlBlan2,
     image3: ImgProd.AddlBlan1,
+    description: 'Alfajor compuesto por dos galletas con cacao unidas por dulce de leche y bañadas con una capa de cobertura blanca',
+    stock: 10 // Cantidad disponible en stock
+  },
+  { 
+    id: 10, 
+    name: 'Alfajor Dulce de Leche Blanco', 
+    price: 3.10,
+    image:  ImgProd.alfhavnFront,
+    image2: ImgProd.alfhavnBack,
+    image3: ImgProd.alfhavnFront,
     description: 'Alfajor compuesto por dos galletas con cacao unidas por dulce de leche y bañadas con una capa de cobertura blanca',
     stock: 10 // Cantidad disponible en stock
   },

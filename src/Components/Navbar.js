@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
       <div className="navbar-content">
         <Link to="/" className="navbar-brand">
-          TuTienda
+          TiendaArg
         </Link>
         <div className="navbar-links">
           {navItems.map((item) => (

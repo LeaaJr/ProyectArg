@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import ImgProd from './ImgProd';
 
 const cards = [
-  { title: 'Yerba Canarias 500gr', image: ImgProd.Can500g, link: '/productos/categoria1' },
-  { title: 'Dulce De Leche Havanna', image: ImgProd.DdlHav1, link: '/productos/categoria2' },
-  { title: 'Yerba Playadito 1kg', image: ImgProd.Pla1kg1, link: '/productos/categoria3' },
-  { title: 'Alfajor Blanco', image: ImgProd.AddlBlan1, link: '/productos/categoria4' },
-  { title: 'Yerba Canarias 1kg', image: 'url_imagen_categoria_5', link: '/productos/categoria5' },
-  { title: 'Yerba Baldo 1kg', image: 'url_imagen_categoria_6', link: '/productos/categoria6' },
+  { title: 'Yerba Canarias 500gr', image: ImgProd.Can500g, link: "/productos/:id" },
+  { title: 'Dulce De Leche Havanna', image: ImgProd.DdlHav1, link: '/productos' },
+  { title: 'Yerba Playadito 1kg', image: ImgProd.Pla1kg1, link: '/productos' },
+  { title: 'Alfajor Blanco', image: ImgProd.AddlBlan1, link: '/productos' },
+  { title: 'Alfajores Havanna', image: ImgProd.alfhavnFront, link: '/productos' },
+  { title: 'Bizcochos Don Satur', image: ImgProd.DonSaturNeg, link: '/productos' },
 ];
 
 const FeaturedCards = () => {

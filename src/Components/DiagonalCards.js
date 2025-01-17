@@ -8,17 +8,17 @@ const cards = [
   { 
     title: 'Yerba', 
     image: yerbacard, 
-    link: '/productos/yerba' 
+    link: '/productos' 
   },
   { 
     title: 'Dulces', 
     image: dulcescard, 
-    link: '/productos/dulces' 
+    link: '/productos' 
   },
   { 
     title: 'Almacén', 
     image: almacencard, 
-    link: '/productos/almacen' 
+    link: '/productos' 
   },
 ];
 
