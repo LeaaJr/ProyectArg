@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // Importa tus imágenes aquí
 import image1 from '../Components/Image/dulce-de-leche.jpg';
-import image2 from '../Components/Image/Alfajores.jpg';
+import image2 from '../Components/Image/alfbackground.jpg';
 import image3 from '../Components/Image/fnd.jpg';
 
 const images = [image1, image2, image3];
@@ -48,23 +48,26 @@ const Carousel = () => {
           />
         </div>
       ))}
-      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden">
-        <h1 className="text-4xl md:text-6xl font-bold text-white text-center px-4 whitespace-nowrap">
-          <span 
-            className="inline-block transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${titlePosition}%)` }}
-          >
-            Pasiones Argentinas
-          </span>
-          {' '}
-          <span 
-            className="inline-block transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(${titlePosition}%)` }}
-          >
-            en Italia
-          </span>
-        </h1>
-      </div>
+<div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center overflow-hidden">
+  <h1 className="text-4xl md:text-6xl font-bold text-white text-center px-4 whitespace-nowrap">
+    <span 
+      className="inline-block transition-transform duration-500 ease-out"
+      style={{ transform: `translateX(-${titlePosition}%)` }}
+    >
+      Pasiones Argentinas
+    </span>
+    {' '}
+    <span 
+      className="inline-block transition-transform duration-500 ease-out"
+      style={{ transform: `translateX(${titlePosition}%)` }}
+    >
+      en Italia
+    </span>
+  </h1>
+  <h3 className="text-4xl text-white font-bold text-center mt-4">
+    De Argentina a tus manos
+  </h3>
+</div>
     </div>
   );
 };
